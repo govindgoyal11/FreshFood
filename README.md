@@ -39,7 +39,10 @@ Save your answer to a `.sql` file in the root directory of this repository.
 1. Write well structured (**object oriented**), documented and maintainable code.
 2. Write unit tests to test the different components of your solution.
 3. Make your solution robust against different kind of failures and **keep in mind** that it should work with bigger data sets.
-4. Place your answer in a directory called "recipes-etl" in the root of this repository, with a README.md file that outlines the instructions to run your application.
+4. The pipeline should be able to be executed manually from the command line in yarn-client and standalone modes. Add the instructions for the execution to the pipeline's documentation.
+5. The system should handle all kinds of errors and react accordingly, for instance, sending an email with the failure.
+6. The system should stop if any of the tasks fails.
+7. Place your answer in a directory called "recipes-etl" in the root of this repository, with a README.md file that outlines the instructions to run your application.
 
 ## Exercise
 
@@ -66,12 +69,6 @@ To be able to track changes in the source data over time, add the **date of exec
 You should store the data in parquet format using the difficulty as partition field.
 
 This task must be done using **Spark** and **Python**.
-
-## Criteria
-
-- The pipeline should be able to be executed manually from the command line in yarn-client and standalone modes. Add the instructions for the execution to the pipeline's documentation.
-- The system should handle all kinds of errors and react accordingly, for instance, sending an email with the failure.
-- The system should stop if any of the tasks fails.
 
 ## Open question
 
