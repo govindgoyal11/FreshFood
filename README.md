@@ -34,15 +34,6 @@ Save your answer to a `.sql` file in the root directory of this repository.
 
 # 2. Apache Spark & Python
 
-## Requirements
-
-1. Write well structured (**object oriented**), documented and maintainable code.
-2. Write unit tests to test the different components of your solution.
-3. Make your solution robust against different kind of failures and **keep in mind** that it should work with bigger data sets.
-4. The pipeline should be able to be executed manually from the command line in yarn-client and standalone modes. Add the instructions for the execution to the pipeline's documentation.
-5. The system should handle all kinds of errors and react accordingly, for instance, sending an email with the failure.
-6. The system should stop if any of the tasks fails.
-7. Place your answer in a directory called "recipes-etl" in the root of this repository, with a README.md file that outlines the instructions to run your application.
 
 ## Exercise
 
@@ -54,6 +45,16 @@ Your pipeline needs to fulfill these tasks:
 - Do some transformations.
 - Create a table and make the output data ready to be queried after and during each execution using **Impala**, without any manual steps.
 - It needs to send an alert if some Task failed, for instance: Send an email, a Slack message or anything else that makes error discovery and error handling easier. You can create just the abstractions for that, or fully implement it, it's up to you.
+
+## Requirements
+
+1. Write well structured (**object oriented**), documented and maintainable code.
+2. Write unit tests to test the different components of your solution.
+3. Make your solution robust against different kind of failures and **keep in mind** that it should work with bigger data sets.
+4. The pipeline should be able to be executed manually from the command line in yarn-client and standalone modes. Add the instructions for the execution to the pipeline's documentation.
+5. The system should handle all kinds of errors and react accordingly, for instance, sending an email with the failure.
+6. The system should stop if any of the tasks fails.
+7. Place your answer in a directory called "recipes-etl" in the root of this repository, with a README.md file that outlines the instructions to run your application.
 
 ### Transformation
 
