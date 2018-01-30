@@ -37,7 +37,17 @@ Save your answer to a `.sql` file in the root directory of this repository.
 
 ## Exercise
 
-You need to build a simple application able to run some Tasks in a specific order. To achieve that, you will need an executor taking care of which task to execute, and a base Task class with the common abstraction.
+You need to build a simple application able to run some Tasks in a specific order. To achieve that, you will need an executor taking care of which task to execute, and a base Task class with the common abstraction in **Python**.
+
+As an example:
+
+```python
+class Executor(object):
+    def __init__(self, tasks=[]):
+        self.tasks = tasks
+    def run(self):
+        # do stuff
+```
 
 Your pipeline needs to fulfill these tasks:
 
