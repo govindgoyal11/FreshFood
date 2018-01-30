@@ -34,7 +34,6 @@ Save your answer to a `.sql` file in the root directory of this repository.
 
 # 2. Apache Spark & Python
 
-
 ## Exercise
 
 You need to build a simple application able to run some Tasks in a specific order. To achieve that, you will need an executor taking care of which task to execute, and a base Task class with the common abstraction in **Python**.
@@ -55,18 +54,9 @@ Your pipeline needs to fulfill these tasks:
 - Do some transformations.
 - Create a table and make the output data ready to be queried after and during each execution using **Impala**, without any manual steps.
 - It needs to send an alert if some Task failed, for instance: Send an email, a Slack message or anything else that makes error discovery and error handling easier. You can create just the abstractions for that, or fully implement it, it's up to you.
+- The executor should run the whole pipeline or an individual Task if we specify it on the command line as an argument.
 
 > It's up to you how do you organize the tasks, keep in mind that the system might grow in the future so good abstractions and clean code will help you.
-
-## Requirements
-
-1. Write well structured (**object oriented**), documented and maintainable code.
-2. Write unit tests to test the different components of your solution.
-3. Make your solution robust against different kind of failures and **keep in mind** that it should work with bigger data sets.
-4. The pipeline should be able to be executed manually from the command line in yarn-client and standalone modes. Add the instructions for the execution to the pipeline's documentation.
-5. The system should handle all kinds of errors and react accordingly, for instance, sending an email with the failure.
-6. The system should stop if any of the tasks fails.
-7. Place your answer in a directory called "recipes-etl" in the root of this repository, with a README.md file that outlines the instructions to run your application.
 
 ### Transformation
 
@@ -82,6 +72,16 @@ To be able to track changes in the source data over time, add the **date of exec
 You should store the data in parquet format using the difficulty as partition field.
 
 This task must be done using **Spark** and **Python**.
+
+## Requirements
+
+1. Write well structured (**object oriented**), documented and maintainable code.
+2. Write unit tests to test the different components of your solution.
+3. Make your solution robust against different kind of failures and **keep in mind** that it should work with bigger data sets.
+4. The pipeline should be able to be executed manually from the command line in yarn-client and standalone modes. Add the instructions for the execution to the pipeline's documentation.
+5. The system should handle all kinds of errors and react accordingly, for instance, sending an email with the failure.
+6. The system should stop if any of the tasks fails.
+7. Place your answer in a directory called "recipes-etl" in the root of this repository, with a README.md file that outlines the instructions to run your application.
 
 ## Open question
 
