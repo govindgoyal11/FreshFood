@@ -51,10 +51,12 @@ class Executor(object):
 
 Your pipeline needs to fulfill these tasks:
 
-- Use the dataset on S3 as the input. (https://s3-eu-west-1.amazonaws.com/dwh-test-resources/recipes.json)
+- Use the dataset on S3 as the input (https://s3-eu-west-1.amazonaws.com/dwh-test-resources/recipes.json)
 - Do some transformations.
 - Create a table and make the output data ready to be queried after and during each execution using **Impala**, without any manual steps.
 - It needs to send an alert if some Task failed, for instance: Send an email, a Slack message or anything else that makes error discovery and error handling easier. You can create just the abstractions for that, or fully implement it, it's up to you.
+
+> It's up to you how do you organize the tasks, keep in mind that the system might grow in the future so good abstractions and clean code will help you.
 
 ## Requirements
 
