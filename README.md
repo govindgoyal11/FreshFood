@@ -32,6 +32,7 @@ Write an Impala SQL query that creates a view of that `ingredients` table, that 
 
 Save your answer to a `.sql` file in the root directory of this repository.
 
+[Govind:] Uploaded first file.
 # 2. Apache Spark & Python
 
 ## Exercise
