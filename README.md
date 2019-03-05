@@ -117,3 +117,39 @@ Average journey time per passenger
 
 
 Please answer these questions either by editing this file, or by adding an additional document to this repository that contains the answers to these questions.
+
+1.	List the different stakeholders who would be interested in lift performance (a “stakeholder” is any person or group who have an interest in or may be affected by the lift performance).**
+[Govind:] Assuming this is corporate office complex and the stake holders will be Office Workers, Maintenance Staff, Vendors, Housekeeping, Delivery boys.
+2.	List other performance measures that it would be useful or important to measure – make sure these cover all of the stakeholders. (Hint: there are lots of these).**
+[Govind:] Few of them could be:
+Average Total time per passenger
+Average time per floor 
+Average Load per floor 
+Peak Hours
+Preferred floors for specific floor
+Lift Idle Time
+3.	What would a suitable data representation look like? Please design a series of tables (as would be suitable to put in a database or spreadsheet). Make sure that the data representation (with very simple arithmetic calculations) is adequate to calculate the above measures, and any other measures that you deem important (and that those calculations are fairly easy and unambiguous).**
+[Govind:] Please refer to files
+Lift_Schema_Datafinal (1).xls
+LiftDFD.pptx
+4.	For “Average waiting time per passenger” and at least 2 other performance measures, describe how they can be easily calculated from your data model. Preferably write the SQL code you would use to calculate the waiting and journey times.** 
+[Govind:]
+
+4.1	“Average waiting time per passenger” the SQL code with description shown below:
+Select sum((unix_timestamp(DoorOpenTime)-unix_timestamp(ButtonPressedTime))*PersonIn)/sum(PersonIn) Average_Waiting_Time_Per_Passenger from LiftRequestTracker
+The calculation will be based on the total time spent on waiting for the lift from the time user had pressed the button from lift lobby till the door opens. If from any floor x of the people getting inside to the lift then total waiting time will be sum((unix_timestamp(DoorOpenTime)-unix_timestamp(ButtonPressedTime))*PersonIn)
+To calculate the average then just divide the above seconds to the total no of passengers who took the lift.
+4.2	 “Average Time Per Floor” the SQL code with description shown below:
+select liftfloorid,avg(unix_timestamp(LiftCrossingFloorTime)-unix_timestamp(LiftHittingFloorTime)) Average_Time_Per_Floor from tblliftmovementtracker group by liftfloorid
+Just calculate the floor hitting time and cross time per floor and calculate the average.
+5.	Describe a simple but sensible algorithm or set of rules which could run a lift control mechanism. In what ways would this simple lift control mechanism work well, and in what ways might it not work well in the real world? What other complications might be important to turn this into a real-world, operational lift controller?**
+[Govind:] Please refer to files for the schema design and algorithm to have the lift mechanism workable
+Lift_Schema_Datafinal (1).xls
+LiftDFD.pptx
+	Real world issues can be like:
+	5.1 DropOut Members
+	5.2 Assumption to have all members getting inside/outside should press the button
+	5.3 Finding person that will get inside and get outside of floor.
+
+
+
